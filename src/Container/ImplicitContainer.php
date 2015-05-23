@@ -46,7 +46,7 @@ abstract class ImplicitContainer extends AbstractContainer
      *
      * @param object $dependency The dependency to resolve.
      *
-     * @return string|null The name of the dependency of null if unmatched
+     * @return string The name of the dependency or null if unmatched
      * @throws InvalidArgumentException
      */
     private function resolve($dependency)
@@ -63,7 +63,7 @@ abstract class ImplicitContainer extends AbstractContainer
      *
      * @param object $dependency The dependecy to match a name to
      *
-     * @return string|null The name of the dependency of null if unmatched
+     * @return string|null The name of the dependency or null if unmatched
      */
     private function getName($dependency)
     {

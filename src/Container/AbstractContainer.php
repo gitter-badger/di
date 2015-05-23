@@ -13,6 +13,22 @@ use ArrayAccess;
 abstract class AbstractContainer implements ContainerInterface, ArrayAccess
 {
     /**
+     * An array of dependencies that can be accessed with array or object
+     * notation on this container.
+     */
+    protected $dependencies;
+
+    /**
+     * Constructs this dependency injection container.
+     *
+     * @param array $dependencies An array of dependencies
+     */
+    protected function __construct(array $dependencies)
+    {
+        $this->dependencies = $dependencies;
+    }
+
+    /**
      * Returns a list of keys for which dependencies were not provided.
      *
      * @return array list of keys for which dependencies were not provided.

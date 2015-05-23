@@ -21,13 +21,12 @@ use InvalidArgumentException;
 abstract class ExplicitContainer extends AbstractContainer
 {
     /**
-     * Constructs this explicit dependency injection container.
-     *
-     * @param array $dependencies An associative array of dependencies
+     * {@inheritdoc}
      */
     protected function __construct(array $dependencies)
     {
-        $this->dependencies = $dependencies;
+        parent::__construct($dependencies);
+
         $this->createDefaults();
         $this->evaluateAll();
         $this->validateAll();

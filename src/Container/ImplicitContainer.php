@@ -116,11 +116,10 @@ abstract class ImplicitContainer extends AbstractContainer
      * @param array $types The dependency classes used to determine the match
      *
      * @return string|null The name of the dependency or null if unmatched
-     *
      */
-    private function resolveNonObject($value, $types)
+    private function resolveNonObject($dependency, array $types)
     {
-        if (is_callable($value) && isset($types['callable'])) {
+        if (is_callable($dependency) && isset($types['callable'])) {
             return $types['callable'];
         }
     }
